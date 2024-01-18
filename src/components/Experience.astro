@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Febrero 2022 - Actualmente...",
+    title: "Software Engineer − Nucleoo",
+    description:
+      "Ingeniero Software en Nucleoo. Desarrollo de aplicaciones web y móviles con Angular y Python. Participación en proyectos como:\n" +
+      "\n\t- Planetary Variables en colaboración con Planet dentro del equipo de Integración e Infraestructura. \n" +
+      "\n\t- Desarrollo de la plataforma Educa.Pro para la gestión de formación ayudando a Recursos Humanos. \n" +
+      "\n\t- Desarrollo de la plataforma Drinkable Rivers para la toma de datos y el estudio de rios. \n" +
+      "\n\t- Cleriti,  solución de software para productoras, cumpliendo con la obligación de transparencia de la UE al proporcionar informes de los ingresos.\n" +
+      "\n\t- Desarrollo de una aplicación web para la gestión de la reserva de sitios dentro de la oficina.\n",
+    link: "https://www.nucleoo.com/",
+  },
+  {
+    date: "Noviembre 2020 – Diciembre 2021",
+    title: "Intern Software DEveloper − Granada Dynamics",
+    description:
+      "Desarrollo de APIs con Python utilizando Flask, donde aprendí el funcionamiento de una API REST con operaciones básicas de CRUD en bases de datos no relacionales (MongoDB). Tambien participe en revisiones de codigo para aprender sobre Git, resolucion de conflictos y gestion de versiones.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4 whitespace-pre-wrap">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,85 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Badge from "../../components/Badge.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import LinkedInIcon from "../../components/icons/LinkedIn.astro";
+import SocialPill from "../../components/SocialPill.astro";
+import GitHubIcon from "../../components/icons/GitHub.astro";
+import MailIcon from "../../components/icons/Mail.astro";
+import Experience from "../../components/Experience.astro";
+import Briefcase from "../../components/icons/Briefcase.astro";
+import CodeIcon from "../../components/icons/Code.astro";
+import Projects from "../../components/Projects.astro";
+import CurriculumIcon from "../../components/icons/Curriculum.astro";
+---
+
+<Layout
+  title="Porfolio de Pablo - Ingenierio Informático y Máster en Ciberseguridad"
+  description="Contrata a Pablo para tu próximo proyecto. "
+>
+  <main class="px-4">
+    <SectionContainer class="md:py-44 pb-32 flex max-md:flex-col" id="sobre-mi">
+      <section class="min-md:w-1/3 flex justify-center">
+        <img
+          class="mb-4 max-md:max-h-56"
+          src="/pablo-no-bg.png"
+          alt="pablo moreno "
+        />
+      </section>
+      <section class="flex flex-col text-center items-center min-md:w-2/3">
+        <h1
+          class="text-gray-900 w-full text-white text-3xl md:text-4xl font-bold gap-x-4 pt-6 lg:pb-6"
+        >
+          👋 ¡Soy Pablo Moreno!
+        </h1>
+        <h2 class="text-xl lg:text-2xl text-balance max-w-[700px] text-white">
+          <span>Ingeniero Informático |</span>
+          <span class="text-yellow-200">Máster en Ciberseguridad</span> |
+          <span class="text-red-200"> De Granada, España</span>
+        </h2>
+        <nav class="flex gap-4 mt-8 flex-wrap justify-center">
+          <SocialPill href="https://www.linkedin.com/in/pablo-moreno-mancebo/">
+            <LinkedInIcon class="size-4 md:size-6" />
+            LinkedIn
+          </SocialPill>
+          <SocialPill href="https://github.com/pmmm3">
+            <GitHubIcon class="size-4 md:size-6" />
+            GitHub
+          </SocialPill>
+          <SocialPill href="mailto:pablo.triplem@gmail.com">
+            <MailIcon class="size-4 md:size-6" />
+            pablo.triplem@gmail.com
+          </SocialPill>
+          <SocialPill
+            href="CV/EN.pdf"
+            download="PabloMarianoMorenoMancebo__Curriculum__EN.pdf"
+          >
+            <CurriculumIcon class="size-4 md:size-6" />
+            Curriculum
+          </SocialPill>
+        </nav>
+      </section>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80"
+      >
+        <Briefcase class="size-7" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80"
+      >
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <!--Projects / -->
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>
