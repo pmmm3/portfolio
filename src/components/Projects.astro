@@ -1,8 +1,12 @@
 ---
+import { prefetch } from "astro:prefetch";
 import { PROJECTS } from "../utils/proyectos.ts";
+import SocialPill from "./SocialPill.astro";
+import GitHubIcon from "./icons/GitHub.astro";
+import { YouTube } from "@astro-community/astro-embed-youtube";
 ---
 
-<div class="max-w-2xl mx-auto">
+<div class="max-w-4xl mx-auto">
     <div id="default-carousel" class="relative" data-carousel="static">
         <!-- Carousel wrapper -->
         <div
@@ -13,11 +17,49 @@ import { PROJECTS } from "../utils/proyectos.ts";
                     return (
                         <div
                             class="hidden duration-700 ease-in-out"
-                            data-carousel-item
+                            data-carousel-item={index}
                         >
                             <div class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" />
-                            <h2 text-4xl>{project.title}</h2>
-                            <p>{project.description}</p>
+
+                            <div class="bg-sky-200/80 px-20 py-4 rounded h-full text-gray-900 flex flex-col justify-between">
+                                <section class="flex gap-4 items-center ">
+                                    <div class="w-1/2 ">
+                                        {project.video && !project.image ? (
+                                            <YouTube
+                                                class="rounded-lg "
+                                                id={project.video}
+                                            />
+                                        ) : (
+                                            project.image && (
+                                                <img
+                                                    class="rounded-lg flex"
+                                                    src={project.image}
+                                                    alt={project.alt}
+                                                />
+                                            )
+                                        )}
+                                    </div>
+                                    <div class="w-1/2">
+                                        <h2 class="text-2xl font-bold mb-2">
+                                            {project.title}
+                                        </h2>
+
+                                        <p class=" mb-4 ">
+                                            {project.description}
+                                        </p>
+                                    </div>
+                                </section>
+
+                                <footer class="mb-10 pt-3">
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <GitHubIcon class="size-4 md:size-6 text-gray-900 " />
+                                    </a>
+                                </footer>
+                            </div>
                         </div>
                     );
                 })
@@ -44,7 +86,7 @@ import { PROJECTS } from "../utils/proyectos.ts";
         <!-- Slider controls -->
         <button
             type="button"
-            class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            class="flex absolute top-0 left-0 z-30 justify-center items-center pl-4 h-full cursor-pointer group focus:outline-none"
             data-carousel-prev
         >
             <span
@@ -67,7 +109,7 @@ import { PROJECTS } from "../utils/proyectos.ts";
         </button>
         <button
             type="button"
-            class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            class="flex absolute top-0 right-0 z-30 justify-center items-center pr-4 h-full cursor-pointer group focus:outline-none"
             data-carousel-next
         >
             <span
