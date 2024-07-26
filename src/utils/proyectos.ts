@@ -1,10 +1,10 @@
 export const PROJECTS = [
   {
-    title: "⚠️​ En desarrollo ⚠️​",
+    title: "ChatIDS++​",
     description:
       "Sistema basado en (LLM). Facilitará la interpretación de eventos de seguridad producidos por un IDS, reduciendo tiempos de respuesta e impacto de los ataques.",
     link: "",
-    github: "",
+    github: "https://github.com/pmmm3/llm-cibersecurty-results",
     video: "",
     image: "https://nordicapis.com/wp-content/uploads/7-Large-Language-Model-LLM-APIs.png",
     alt:""
